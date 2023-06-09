@@ -11,19 +11,8 @@ class PrefectureSeeder extends Seeder
 
     public function run()
     {
-//        $client = new Client();
 
         try {
-//            $url = 'https://opendata.resas-portal.go.jp/api/v1/prefectures';
-//            $apiKey = env('OPEN_DATA_API_KEY');
-//            $response = $client->get($url, [
-//                'headers' => [
-//                    'X-API-KEY' => $apiKey,
-//                    'Accept' => 'application/json',
-//                ],
-//            ]);
-//            $data = json_decode($response->getBody(), true);
-
             $prefectures = [
                 [
                     "id" => 1,
