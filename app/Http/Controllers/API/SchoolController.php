@@ -39,19 +39,37 @@ class SchoolController extends Controller
             'success' => true,
             'data' => [
                 'elementary' => [
-                    'school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['elementary'])->count(),
-                    'prefecture_average' => $this->calculateAverage($prefElementarySchoolCount, $citiesInPrefCount),
-                    'national_average' => $this->calculateAverage($nationalElementarySchoolCount, $allCitiesCount)
+                    'city_school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['elementary'])->count(),
+                    'prefecture_school_average' => $this->calculateAverage($prefElementarySchoolCount, $citiesInPrefCount),
+                    'national_school_average' => $this->calculateAverage($nationalElementarySchoolCount, $allCitiesCount),
+                    'city_student_number_per_teacher' => 0,
+                    'prefecture_student_number_per_teacher' => 0,
+                    'national_student_number_per_teacher' => 0,
+                    'city_student_count' => 0,
+                    'prefecture_student_average' => 0,
+                    'national_student_average' => 0,
                 ],
                 'middle' => [
-                    'school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['middle'])->count(),
-                    'prefecture_average' => $this->calculateAverage($prefMiddleSchoolCount, $citiesInPrefCount),
-                    'national_average' => $this->calculateAverage($nationalMiddleSchoolCount, $allCitiesCount)
+                    'city_school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['middle'])->count(),
+                    'prefecture_school_average' => $this->calculateAverage($prefMiddleSchoolCount, $citiesInPrefCount),
+                    'national_school_average' => $this->calculateAverage($nationalMiddleSchoolCount, $allCitiesCount),
+                    'city_student_number_per_teacher' => 0,
+                    'prefecture_student_number_per_teacher' => 0,
+                    'national_student_number_per_teacher' => 0,
+                    'city_student_count' => 0,
+                    'prefecture_student_average' => 0,
+                    'national_student_average' => 0,
                 ],
                 'senior' => [
-                    'school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['senior'])->count(),
-                    'prefecture_average' => $this->calculateAverage($prefSeniorSchoolCount, $citiesInPrefCount),
-                    'national_average' => $this->calculateAverage($nationalSeniorSchoolCount, $allCitiesCount)
+                    'city_school_count' => $citySchools->clone()->where('school_type_code', School::SCHOOL_TYPE['senior'])->count(),
+                    'prefecture_school_average' => $this->calculateAverage($prefSeniorSchoolCount, $citiesInPrefCount),
+                    'national_school_average' => $this->calculateAverage($nationalSeniorSchoolCount, $allCitiesCount),
+                    'city_student_number_per_teacher' => 0,
+                    'prefecture_student_number_per_teacher' => 0,
+                    'national_student_number_per_teacher' => 0,
+                    'city_student_count' => 0,
+                    'prefecture_student_average' => 0,
+                    'national_student_average' => 0,
                 ],
             ]
         ], Response::HTTP_OK);
