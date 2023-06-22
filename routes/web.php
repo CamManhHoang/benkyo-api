@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\SchoolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('{pref}/{city}/schools', [SchoolController::class, 'index']);

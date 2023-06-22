@@ -13,6 +13,8 @@ class SchoolController extends Controller
 {
     public function index($pref_slug, $city_slug, Request $request)
     {
+        $debugbar = app(\Barryvdh\Debugbar\LaravelDebugbar::class);
+        $debugbar->enable();
         $pref = Prefecture::where('slug', $pref_slug)->first();
         $city = City::where('slug', $city_slug)->first();
 
@@ -34,6 +36,7 @@ class SchoolController extends Controller
 
         // number of cities in the entire nation
         $allCitiesCount = City::count();
+//        return view('welcome');
 
         return response()->json([
             'success' => true,
