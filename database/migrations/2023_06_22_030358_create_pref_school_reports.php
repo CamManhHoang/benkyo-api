@@ -16,9 +16,9 @@ class CreatePrefSchoolReports extends Migration
         Schema::create('pref_school_reports', function (Blueprint $table) {
             $table->id();
             $table->integer('prefecture_id');
-            $table->integer('elementary');
-            $table->integer('middle');
-            $table->integer('senior');
+            $table->integer('elementary')->nullable();
+            $table->integer('middle')->nullable();
+            $table->integer('senior')->nullable();
             $table->integer('year');
         });
     }

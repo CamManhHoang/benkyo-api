@@ -13,13 +13,13 @@ class CreateStudentReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_reports', function (Blueprint $table) {
+        Schema::create('pref_student_reports', function (Blueprint $table) {
             $table->id();
             $table->integer('prefecture_id');
-            $table->integer('total');
-            $table->integer('elementary');
-            $table->integer('middle');
-            $table->integer('senior');
+            $table->integer('elementary')->nullable();
+            $table->integer('middle')->nullable();
+            $table->integer('senior_fulltime')->nullable();
+            $table->integer('senior_partime')->nullable();
             $table->integer('year');
         });
     }
